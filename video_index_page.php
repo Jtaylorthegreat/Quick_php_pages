@@ -10,8 +10,8 @@
                    echo "<source src='" . $file_queue . $file . "' type='video/mp4'>";
                    echo "</video></pre>";
                 }
-            }
-    echo "</body></html>";
+        }
+    	echo "</body></html>";
 ?>
 
 
