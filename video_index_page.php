@@ -1,9 +1,9 @@
 <?php 
 	echo "<head><title>Video Indexed Page</title></head>";
 	echo "<body>";
-	         $file_queue = "my_videos/";
-            $video_files = scandir($file_queue);
-            foreach($video_files as $file) {
+        $file_queue = "my_videos/";
+        $video_files = scandir($file_queue);
+        foreach($video_files as $file) {
               if (!in_array($file,array(".",".."))){
                    echo "<pre><font color='black'> " . $file . "</font><br>";
                    echo "<video width='600' controls>";
