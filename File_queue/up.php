@@ -28,7 +28,7 @@
     echo "<table class='a'><tr class='a'><th class='a'>File Name</th><th class='a'>Size</th><th class='a'>Date Created</th></tr>";
 
     foreach($served_files as $file) {
-   	if (!in_array($file,array(".",".."))) {
+   	if ((!in_array($file,array(".",".."))) && is_file($directory_served.$file)) {
         
         $indexed_file_size = filesize($directory_served.$file);
         $indexed_file_mod_date = date ("Y-d-m H:i:s", filemtime($directory_served.$file));
