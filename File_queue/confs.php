@@ -1,9 +1,9 @@
 <?php
 
 
-$directory_served = "myfiles/";
-$page_title = "Pretty Files";
-$page_header = "Files";
+$directory_served = "MYDIRECTORYLOCATION/";
+$page_title = "My Custom Title";
+$page_header = "My Custom Header";
 $custom_page_icon = "favicon.ico";
 
 const kB = 1024;
