@@ -3,12 +3,7 @@
 
 	if(isset($_POST['upsubmit'])) { 
 	  
-	    //$file_queue = $config['agentfilequeuefolder'];
-		//$script_folder = $file_queue;
-	    // Define maxsize for files  
-	    //$maxsize = 300 * MB;  
-	  
-	    if(!empty(array_filter($_FILES['files']['name']))) { 
+		    if(!empty(array_filter($_FILES['files']['name']))) { 
 	  
 	        foreach ($_FILES['files']['tmp_name'] as $key => $value) { 
 	              
@@ -18,9 +13,6 @@
 	            $file_ext = pathinfo($file_name, PATHINFO_EXTENSION); 
 	  
 	            $filepath = $directory_served.$file_name; 
-	  
-	                //if ($file_size > $maxsize)          
-	                //    echo "Error: File size is larger than the allowed limit.";  
 	  
 	                if(file_exists($filepath)) { 
 	                    $filepath = $directory_served.time().$file_name; 
