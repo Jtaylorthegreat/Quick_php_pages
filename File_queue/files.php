@@ -5,7 +5,6 @@
 
 
   echo "<head><meta http-equiv='content-type' content='text/html; charset=UTF-8'><link rel='shortcut icon' type='image/x-icon' href='" . $custom_page_icon . "' /><title>" . $page_title . "</title></head>";
-  //echo "<body style='background-color:#647F94'>";
   echo "<body>";
   echo "<header>" . $page_header . "</header>";
   echo "<br>";
@@ -21,18 +20,20 @@
     echo "File Queue Empty";
   }
   else {
-    echo "<table class='a'><tr class='a'><th class='a'>File Name</th><th class='a'>Size</th></tr>";
+    echo "<table class='a'><tr class='a'><th class='a'>File Name</th><th class='a'>Size</th><th class='a'>Date Created</th></tr>";
 
     foreach($served_files as $file) {
    	if (!in_array($file,array(".",".."))) {
         
         $indexed_file_size = filesize($directory_served.$file);
-
+        $indexed_file_mod_date = date ("Y-d-m H:i:s", filemtime($directory_served.$file));
+        
         echo "<tr class='a'>";
         if ( $indexed_file_size >= GB){
           $indexed_file_rsize =  round($indexed_file_size / GB, 3);
           echo "<td class='a'>" . $file . "</td>";
           echo "<td class='a'>" . $indexed_file_rsize . ' GB </td>';
+          echo "<td class='a'>" . $indexed_file_mod_date . "</td>";
           echo "</tr>";
           continue;
         }
@@ -40,6 +41,7 @@
           $indexed_file_rsize =  round($indexed_file_size / MB, 3);
           echo "<td class='a'>" . $file . "</td>";
           echo "<td class='a'>" . $indexed_file_rsize . ' MB </td>';
+          echo "<td class='a'>" . $indexed_file_mod_date . "</td>";
           echo "</tr>";
           continue;
         }
@@ -47,12 +49,14 @@
           $indexed_file_rsize =  round($indexed_file_size / kB, 3);
           echo "<td class='a'>" . $file . "</td>";
           echo "<td class='a'>" . $indexed_file_rsize . ' kB </td>';
+          echo "<td class='a'>" . $indexed_file_mod_date . "</td>";
           echo "</tr>";
           continue;
         }
         else {
           echo "<td class='a'>" . $file . "</td>";
           echo "<td class='a'>" . $indexed_file_size . ' bytes </td>';
+          echo "<td class='a'>" . $indexed_file_mod_date . "</td>";
           echo "</tr>";
           continue;
         }
