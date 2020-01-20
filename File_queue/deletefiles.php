@@ -5,7 +5,6 @@
 
 
   echo "<head><meta http-equiv='content-type' content='text/html; charset=UTF-8'><link rel='shortcut icon' type='image/x-icon' href='" . $custom_page_icon . "' /><title>" . $page_title . "</title></head>";
-  //echo "<body style='background-color:#647F94'>";
   echo "<body>";
   echo "<header>" . $page_header . "</header>";
   echo "<br>";
@@ -23,7 +22,7 @@
   else {
 	  echo "<form method ='post'><select name = 'pickedfile[]' multiple size = $num_of_files>";
 	  foreach($served_files as $file) {
-	        if (!in_array($file,array(".",".."))) {
+	        if ((!in_array($file,array(".",".."))) && is_file($directory_served.$file)) {
 	        	echo "<option value = '$file' >" . $file . "</option>";
 	        }
 	  }
