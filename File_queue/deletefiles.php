@@ -6,7 +6,7 @@
 
   echo "<head><meta http-equiv='content-type' content='text/html; charset=UTF-8'><link rel='shortcut icon' type='image/x-icon' href='" . $custom_page_icon . "' /><title>" . $page_title . "</title></head>";
   echo "<body>";
-  echo "<header>" . $page_header . "</header>";
+  echo "<header id='header'>" . $page_header . "</header>";
   echo "<br>";
   echo "&nbsp&nbsp<a href='files.php'><img src='home-icon.png' alt='home' style='width:28px;height:28px;border:0'></a>&nbsp&nbsp";
   echo "&nbsp&nbsp<a href='up.php'><img src='upload-icon.png' alt='home' style='width:28px;height:28px;border:0'></a>&nbsp&nbsp";
