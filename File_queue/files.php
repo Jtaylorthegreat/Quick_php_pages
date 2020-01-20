@@ -6,7 +6,7 @@
 
   echo "<head><meta http-equiv='content-type' content='text/html; charset=UTF-8'><link rel='shortcut icon' type='image/x-icon' href='" . $custom_page_icon . "' /><title>" . $page_title . "</title></head>";
   echo "<body>";
-  echo "<header>" . $page_header . "</header>";
+  echo "<header id='header'>" . $page_header . "</header>";
   echo "<br>";
   echo "&nbsp&nbsp<a href='files.php'><img src='home-icon.png' alt='home' style='width:28px;height:28px;border:0'></a>&nbsp&nbsp";
   echo "&nbsp&nbsp<a href='up.php'><img src='upload-icon.png' alt='home' style='width:28px;height:28px;border:0'></a>&nbsp&nbsp";
@@ -27,7 +27,8 @@
         
           $indexed_file_size = filesize($directory_served.$file);
           $indexed_file_mod_date = date ("Y-d-m H:i:s", filemtime($directory_served.$file));
-          
+          //$indexed_file_extension = pathinfo($directory_served.$file, PATHINFO_EXTENSION);
+
           echo "<tr class='a'>";
           if ( $indexed_file_size >= GB){
             $indexed_file_rsize =  round($indexed_file_size / GB, 3);
