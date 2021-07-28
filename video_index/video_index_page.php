@@ -8,7 +8,7 @@
               if (!in_array($file,array(".",".."))){
 		   echo "<hr><br>";
                    echo "<pre><font color='white'><b> " . $file . "</b></font><br>";
-                   echo "<video width='600' controls>";
+                   echo "<video width='600' controls preload='none'>";
                    echo "<source src='" . $file_queue . $file . "' type='video/mp4'>";
                    echo "</video></pre>";
                 }
